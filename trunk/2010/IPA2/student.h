@@ -7,11 +7,13 @@
 #ifndef STUDENT_H_
 #define STUDENT_H_
 
+#define MAXLENGTH 21
+
 /* Definition of a node in the linked list */
 typedef struct node
 {
-  char name[21]; // holds the name of the student
-  char IDnumber[21]; //holds the ID number of the student
+  char name[MAXLENGTH]; // holds the name of the student
+  char IDnumber[MAXLENGTH]; //holds the ID number of the student
   struct node* next; // holds the address of the next ndoe in the linked list
 }NODE;
 
