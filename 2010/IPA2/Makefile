@@ -1,3 +1,5 @@
+# do not change this file
+#
 # create the executable file, type "make"
 # 
 # delete the executable, type "make clean"
