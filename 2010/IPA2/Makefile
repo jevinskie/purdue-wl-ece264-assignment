@@ -1,5 +1,3 @@
-# do not change this file
-#
 # create the executable file, type "make"
 # 
 # delete the executable, type "make clean"
@@ -16,7 +14,7 @@
 CC = gcc -g -Wall -Wshadow
 VALGRIND = valgrind --leak-check=yes
 
-ipa2: ipa2.c student.c
+ipa2: ipa2.c student.c student.h
 	$(CC) ipa2.c student.c -I. -o ipa2
 
 test: ipa2
