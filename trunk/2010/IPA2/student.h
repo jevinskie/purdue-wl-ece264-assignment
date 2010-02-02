@@ -17,8 +17,6 @@ typedef struct node
   struct node* next; // holds the address of the next ndoe in the linked list
 }NODE;
 
-typedef struct node* NODEPTR; // a pointer to a linked list node
-
 void AddStudent();
 void Search();
 void SearchID();
