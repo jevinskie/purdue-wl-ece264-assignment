@@ -1,33 +1,31 @@
 /*
- * student.h
- *
- *  Created on: Jan 26, 2010
- *      Author: askiahill
+ * Student.h should containd the library files you want to include in your 
+ * program as well the headers to the functions that you are going to use.
+ * 
+ * 
  */
-
 #ifndef STUDENT_H_
 #define STUDENT_H_
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#define MAXLENGTH 21
 
-#define struct node
+/* Definition of a node in the linked list */
+typedef struct node
 {
-	char name[21];
-	char IDnumber[21];
-	node* next;
+  char name[MAXLENGTH]; // holds the name of the student
+  char IDnumber[MAXLENGTH]; //holds the ID number of the student
+  struct node* next; // holds the address of the next ndoe in the linked list
 }NODE;
 
-#define node* NODEPTR;
+typedef struct node* NODEPTR; // a pointer to a linked list node
 
-int AddStudent(NODEPTR database, FILE* fp);
-void Search(NODEPTR database, FILE* fp);
-void SearchID(char* IDnumber, NODEPTR database);
-void SearchName(char* lastname, NODEPTR database);
-void Delete(NODEPTR database, FILE* fp);
-void DeleteID(char* IDnumber, NODEPTR database);
-void DeleteName(char* lastname, NODEPTR database);
-void PrintEntry(NODEPTR iter);
+void AddStudent();
+void Search();
+void SearchID();
+void SearchName();
+void Delete();
+void DeleteID();
+void DeleteName();
+void PrintEntry();
 
 #endif /* STUDENT_H_ */
