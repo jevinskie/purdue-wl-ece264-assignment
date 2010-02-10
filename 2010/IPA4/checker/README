@@ -1,0 +1,14 @@
+This program validates a packing solution.
+
+Usage:
+ipa4check <dimension_file> <solution_file>
+
+<dimension_file> is a file containing the sizes of rectangles.
+<solution_file> contains positions and rotations of rectangles.
+
+
+To make the executable:
+Type `make' in the terminal when in the source directory.
+If `make' fails because of an incompatible library, please
+substitute the file "libllist.a" with "libllist.a.alt", both
+contained in this package.

@@ -1,0 +1,17 @@
+If do not know where to start, fill in the codes in
+the following order:
+1. linklist.c/.h
+2. stack.c/.h
+3. maze.c/.h
+4. solver.c/.h
+5. main.c (already completed)
+
+You can search for "TODO" in the source files to
+find the places to fill your codes.  Of course you
+are not required to follow to skeleten completely.
+You may add, remove or change any files, functions,
+variables, typedefs, etc., as you want.  It is also
+fine to start from scratch.
+
+In some situations the Makefile needs to be modified
+accordingly.  Please be aware.
