@@ -1,0 +1,33 @@
+This assignment asks you to write a program finding a path to the exit of
+a maze.  The assignment is dived into three stages:
+
+1. Read maze files (due 01/23)
+
+2. Traverse simple mazes without any intersection (due 01/30)
+
+3. Traverse mazes with intersections (due 02/06)
+
+**********************
+* Inputs and Outputs *
+**********************
+
+Throughout the whole semester, every assignment shares the same structure:
+
+* All assignments are graded by computer programs.  Therefore, your programs
+  must follow some rules so that the grading programs can give you the
+  correct results.
+
+* Inputs are always given in files.  The names of the files are specified 
+  in argv.  Nobody will sit in front of a computer entering anything.  Thus,
+  your programs must not expect any input from keyboard.  Your programs should
+  not have scanf (or similar function calls) that wait for inputs from keyboard.
+  
+* Outputs are always printed on screen.  You must use the code given to you
+  for generating the outputs.  You should not change the format at all.  If the
+  formats are different, you may not receive the correct points.
+  
+We try hard to make the grading programs correctly.  However, we make mistakes, too.
+If you believe that the grading programs produce incorrect results, please inform us
+as soon as possible.  Thank you for the help.
+
+     
