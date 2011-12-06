@@ -1,0 +1,20 @@
+In this part, your program needs to read two files.  The names
+are given as argv[1] and argv[2].  The first file is the maze
+and the second file is the path.
+
+The path file contains four commands:
+E- east (i.e. right)
+W- west
+N- north (i.e. up)
+S- south 
+If the input file includes any character other than these
+four characters, your program should ignore the character.
+
+Your program decides whether the path is valid.  If a path
+makes the player run into a brick, the path is invalid.
+
+A valid path does not necessarily reach the exit. More likely, a valid
+path leads the player to somewhere still inside the maze.
+
+If the path reaches the exit, it is always valid.  Your program
+should ignore everything after reaching the exit.
