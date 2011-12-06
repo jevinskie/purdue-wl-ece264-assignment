@@ -1,0 +1,13 @@
+To compile the program type
+
+make
+
+A program called "traverse" is generated.  To execute this program,
+type
+
+./traverse maze1
+
+You can add more files but you must modify Makefile accordingly.  Your
+submission must include Makefile.  The instructor will explain
+Makefile later.  Right now, just use it.
+

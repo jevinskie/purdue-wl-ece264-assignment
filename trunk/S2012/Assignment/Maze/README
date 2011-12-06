@@ -2,10 +2,39 @@ This assignment asks you to write a program finding a path to the exit of
 a maze.  The assignment is dived into three stages:
 
 1. Read maze files (due 01/23)
+	You can assume that the maze's width is no greater than 80 characters 
+	and the height is no greater than 80 characters.  You may create a
+	2-D array of 80 x 80 to store the maze.
+	
+	All mazes are rectangular.
 
-2. Traverse simple mazes without any intersection (due 01/30)
+2. Determine whether a path is valid (due 01/30)
 
+   Your program need to read two files: the maze and the path.
+   Your program reports whether the path is valid.  An invalid path
+   intends to move into a brick.
+
+	You can assume that the maze's width is no greater than 80
+	characters but the height can be very large. You are not
+	allowed to create any fixed-size array to store the maze.  You
+	must use dynamic memory allocation and release in your
+	program.
+
+	All mazes are rectangular.
+		
 3. Traverse mazes with intersections (due 02/06)
+
+   Make sure your programs can handle the situation when the starting
+   point is at an intersection.  
+
+   All mazes are rectangular.
+
+The upperleft corner is (row = 0, column = 0), not (row = 1, column = 1).
+Moving right increments column.
+Moving down increments row.
+
+Hint: Do not use (x, y) because it can be confusing.  This assignment
+uses (row, column) and they correspond to (y, x).
 
 **********************
 * Inputs and Outputs *
@@ -13,21 +42,49 @@ a maze.  The assignment is dived into three stages:
 
 Throughout the whole semester, every assignment shares the same structure:
 
-* All assignments are graded by computer programs.  Therefore, your programs
-  must follow some rules so that the grading programs can give you the
-  correct results.
+* All assignments are graded by computer programs.  Therefore, your
+  programs must follow some rules so that the grading programs can
+  give you the correct results.
 
-* Inputs are always given in files.  The names of the files are specified 
-  in argv.  Nobody will sit in front of a computer entering anything.  Thus,
-  your programs must not expect any input from keyboard.  Your programs should
-  not have scanf (or similar function calls) that wait for inputs from keyboard.
+* Inputs are always given in files.  The names of the files are
+  specified in argv.  Nobody will sit in front of a computer entering
+  anything.  Thus, your programs must not expect any input from
+  keyboard.  Your programs should not have scanf (or similar function
+  calls) that wait for inputs from keyboard.
   
-* Outputs are always printed on screen.  You must use the code given to you
-  for generating the outputs.  You should not change the format at all.  If the
-  formats are different, you may not receive the correct points.
+  From the very beginning, you should write your programs so that they
+  take inputs from files.  If you use scanf to test your programs, you
+  will likely spend hours removing scanf before submissions.
   
-We try hard to make the grading programs correctly.  However, we make mistakes, too.
-If you believe that the grading programs produce incorrect results, please inform us
-as soon as possible.  Thank you for the help.
+* Outputs are always printed on screen.  You must use the code given
+  to you for generating the outputs.  You should not change the format
+  at all.  If the formats are different, you may not receive the
+  correct points.
+  
+* You are not allowed to use global variables (variables outside the
+scope of any function). You will receive 20% penalty for each global
+variable.  In other words, you will receive zero if you have five or
+more global variables in your program.  Everything a function needs
+must be passed into the function as an argument.  You are allowed to
+create global constants (by using #define).
 
-     
+There are some test inputs in the Inputs directory.  
+
+  
+**********************  
+* Electronic Grading *  
+**********************
+  
+We try hard to make the grading programs correctly.  However, we make
+mistakes, too.  If you believe that the grading programs produce
+incorrect results, please inform us as soon as possible.  Thank you
+for the help.
+
+You can submit at most five times each day.  One day is counted from
+00:00 to 11:59PM, based on the clock of the grading computer.  The
+count is reset at midnight.  The reason of this restriction is to
+prevent some people from blindly submitting meaningless code and
+hoping to be lucky and get a few points.  If your score does not
+improve after a few submissions, you should study or seek help.
+Submitting the same incorrect programs over and over again would not
+improve you score.
