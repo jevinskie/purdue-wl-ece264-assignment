@@ -33,6 +33,8 @@
    and length is 3
    This function should return 3 + 11 + 9 = 23.
 
+   If the array has no element (length is 0), the function returns 0.
+
 */
 int addElement(int * array, int length)
 {
@@ -103,7 +105,8 @@ int countNegative(int * array, int length)
    This function should return 0.
 
    If the array has only one element (i.e. length is 1), the function
-   returns 1.
+   returns 1.  If the array has no element (length is 0), the function
+   also returns 1.
 
 */
 int isIncreasing(int * array, int length)
