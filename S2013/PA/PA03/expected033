@@ -1,0 +1,20 @@
+partition 3
+1 1 1 
+1 2 
+2 1 
+3 
+subset of A B C 
+C 
+B 
+B C 
+A 
+A C 
+A B 
+A B C 
+permute A B C 
+A B C 
+A C B 
+B A C 
+B C A 
+C B A 
+C A B 
