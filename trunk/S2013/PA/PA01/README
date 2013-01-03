@@ -39,11 +39,30 @@ files yet.
 
 To execute and to test your program, type
 
-make
+   	       make
 
 in Linux terminal.  
 
 You will receive the score of your program.
+
+You can use 
+
+    	    make -s
+
+to print fewer messages.  
+
+If you have not changed the program since that last time you type
+make and you type make again, you will get this message
+
+make: `pa01' is up to date.
+
+Please type 
+
+       	    make clean
+
+then
+
+	    make
 
 ================================================================
 
