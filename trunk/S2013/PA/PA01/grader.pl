@@ -65,11 +65,11 @@ $totalScore = 0;
 if($ARGV[1] == 1){
     for($i = $NUM_TC; $i <= $NUM_TC+1; $i++) {
 	if((system("make test$i") == 512)) {
-	    print "make test$i passes\n";
+#	    print "make test$i passes\n";
 	    $score[$i] = 0.025 * $MAX_SCORE;	
 	} else {
 	    $fail_info = `make test$i 2>&1`;
-	    print "make test$i fails\n";
+	    print "test$i fails\n";
 	    print "$fail_info\n\n";
 	}
     }
@@ -77,14 +77,14 @@ if($ARGV[1] == 1){
 
 for($i = 0; $i < $NUM_TC; $i++) {
     if(system("make test$i") == 0) {
-	print "make test$i passes\n";
+#	print "make test$i passes\n";
 	$score[$i] = $PPT;
 	$isMemTestSuccess = 0;
 	if(-e "memoutput$i"){
 	    open(MEM, "<memoutput$i");
 	    while ($line = <MEM>) {
 		if ($line =~ m/All heap blocks were freed -- no leaks are possible/) 				{
-		    print "memory test passes\n";
+#		    print "memory test passes\n";
 		    $isMemTestSuccess = 1;
 		}
 	    }
@@ -97,7 +97,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 	
     } else {
 	$fail_info = `make test$i 2>&1`;
-	print "make test$i fails\n";
+	print "test$i fails\n";
 	print "$fail_info\n";
     }
 }
