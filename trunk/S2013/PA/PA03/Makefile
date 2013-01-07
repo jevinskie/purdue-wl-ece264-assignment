@@ -3,15 +3,35 @@ CFLAGS = -g -Wall -Wshadow
 OBJS = answer03.o pa03.o
 HDRS = pa03.h
 
+.PHONY : clean test1 test2 test3 test4 test5 test6
 pa03: $(OBJS) $(HDRS)
 	$(GCC) $(CFLAGS) $(OBJS) -o $@
+	perl grader.pl 2 2
+
+test1:
 	./pa03 3 > output033
+	diff -w expected033 output033
+
+test2:
 	./pa03 4 > output034
+	diff -w expected034 output034
+
+test3:
 	./pa03 5 > output035
-	./pa03 6 > output036
-	./pa03 7 > output037
-	./pa03 8 > output038
+	diff -w expected035 output035
+	
+test4:
 	valgrind --leak-check=full --verbose ./pa03 6
+	./pa03 6 > output036
+	diff -w expected036 output036
+	
+test5:
+	./pa03 7 > output037
+	diff -w expected037 output037
+	
+test6:
+	./pa03 8 > output038
+	diff -w expected038 output038
 
 .c.o: 
 	$(GCC) $(CFLAGS) -c $*.c
