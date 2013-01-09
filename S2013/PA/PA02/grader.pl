@@ -4,10 +4,10 @@ use strict;
 use Cwd;
 #my $SUBMISSION_DIR = "submission_Lu";
 #my $STUDENT_FILES = "*";
-#my $TEST_FILES = "outputs/ solutions/ testcases/";
-#my $TEST_DIR = "temp";
-#my $GRADE_DIR = cwd();
-#my $GRADE_FILE = "grade_report";
+my $TEST_FILES = "outputs/ solutions/ testcases/";
+my $TEST_DIR = "temp";
+my $GRADE_DIR = cwd();
+my $GRADE_FILE = "grade_report";
 my $MAX_SCORE;
 my $PPT;
 my $NUM_TC;
@@ -28,9 +28,6 @@ if($ARGV[0] == 1){
     $MAX_SCORE = 5;
 }
 elsif($ARGV[0] == 2){
-    $MAX_SCORE = 2;
-}
-elsif($ARGV[0] == 3){
     $MAX_SCORE = 3;
 }
 # Finds number of testcase to be run and calculates number of
@@ -111,7 +108,7 @@ for ($i = 0; $i < $NUM_TC; $i++) {
 }	
 
 #print student's score on screen
-print "\nSCORE = $totalScore\n";
+print "\nSCORE = $totalScore/$MAX_SCORE\n";
 print "DONE\n\n";
 
 
