@@ -7,7 +7,7 @@ VALGRIND = valgrind --tool=memcheck --leak-check=full --verbose
 .PHONY : clean test0 test1 test2 test3 test4 test5
 pa03: $(OBJS) $(HDRS)
 	$(GCC) $(CFLAGS) $(OBJS) -o $@
-	perl grader.pl 2 2
+	perl grader.pl 5 2
 
 test0:
 	@$(VALGRIND) --log-file=memoutput0 ./pa03 3 > output033

@@ -2,12 +2,6 @@
 
 use strict;
 use Cwd;
-#my $SUBMISSION_DIR = "submission_Lu";
-#my $STUDENT_FILES = "*";
-my $TEST_FILES = "outputs/ solutions/ testcases/";
-my $TEST_DIR = "temp";
-my $GRADE_DIR = cwd();
-my $GRADE_FILE = "grade_report";
 my $MAX_SCORE;
 my $PPT;
 my $NUM_TC;
@@ -24,18 +18,12 @@ my $i;
 my $j;
 
 # Set maximum possible scores
-if($ARGV[0] == 1){
-    $MAX_SCORE = 5;
-}
-elsif($ARGV[0] == 2){
-    $MAX_SCORE = 5;
-}
+$MAX_SCORE = $ARGV[0];
 # Finds number of testcase to be run and calculates number of
 # points per testcase
 
 @list = `ls expected*`;
 $NUM_TC = scalar(@list);
-#print "$NUM_TC";
 
 if($ARGV[1] == 1){
     $PPT =  (0.95 * $MAX_SCORE) / $NUM_TC;
@@ -44,16 +32,12 @@ elsif($ARGV[1] == 2){
     $PPT =  $MAX_SCORE / $NUM_TC;
 }
 
-
-#open(DETAIL, ">$GRADE_FILE");
-
 print "GRADING RESULTS\n";
 
 #correct directory path
 #$dir = quotemeta($_);
 
 #Run executable and tests in testing directory	
-
 
 #initalize score
 for($i = 0; $i < $NUM_TC; $i++) {
@@ -110,9 +94,4 @@ for ($i = 0; $i < $NUM_TC; $i++) {
 #print student's score on screen
 print "\nSCORE = $totalScore/$MAX_SCORE\n";
 print "DONE\n\n";
-
-
-
-#close(DETAIL);
-#close(FILE);
 
