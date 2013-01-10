@@ -43,7 +43,7 @@ test5:
 	$(GCC) $(CFLAGS) -c $*.c
 
 clean:
-	rm -f pa03 $(OBJS) output03*
+	rm -f pa03 $(OBJS) output03* memoutput*
 
 
 
