@@ -28,7 +28,7 @@ if($ARGV[0] == 1){
     $MAX_SCORE = 5;
 }
 elsif($ARGV[0] == 2){
-    $MAX_SCORE = 2;
+    $MAX_SCORE = 5;
 }
 # Finds number of testcase to be run and calculates number of
 # points per testcase
