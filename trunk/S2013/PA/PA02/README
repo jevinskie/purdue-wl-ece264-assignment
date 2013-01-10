@@ -3,5 +3,3 @@ integers.  The functions are the same as those in PA01 but you must
 implement these functions using recursion.  You cannot use for or
 while or goto.
 
-Please copy the files from PA01, rename answer01.c to answer02.c,
-and modify the functions in answer02.c.
