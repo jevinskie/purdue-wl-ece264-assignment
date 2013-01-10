@@ -33,7 +33,7 @@ elsif($ARGV[0] == 2){
 # Finds number of testcase to be run and calculates number of
 # points per testcase
 
-@list = `ls input*`;
+@list = `ls expected*`;
 $NUM_TC = scalar(@list);
 #print "$NUM_TC";
 
