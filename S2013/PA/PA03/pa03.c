@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MINLENGTH 3
-#define SETLENGTH 8
 int main(int argc, char * * argv)
 {
   char set[] ={'A', 'B', 'C', 'D', 
@@ -17,10 +15,10 @@ int main(int argc, char * * argv)
       return EXIT_FAILURE;
     }
   int val = (int) strtol(argv[1], NULL, 10);;
-  if ((val < MINLENGTH) || (val > SETLENGTH))
+  if ((val < MINLENGTH) || (val > MAXLENGTH))
     {
       printf("usage: pa03 <number>, number must be between %d and %d\n",
-	     MINLENGTH, SETLENGTH);
+	     MINLENGTH, MAXLENGTH);
       return EXIT_FAILURE;
     }
   partition(val);

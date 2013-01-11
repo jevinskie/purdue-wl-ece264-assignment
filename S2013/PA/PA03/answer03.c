@@ -8,6 +8,10 @@
 #include "pa03.h"
 #include <stdio.h>
 #include <stdlib.h>
+/*
+ * Hint: You may create additional arrays if needed.
+ * The maximum size needed is specified by MAXLENGTH in pa03.h.
+ */
 void partition(int value)
 {
   printf("partition %d\n", value);
