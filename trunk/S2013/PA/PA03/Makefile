@@ -140,7 +140,7 @@ test17:
 	$(GCC) $(CFLAGS) -c $*.c
 
 clean:
-	rm -f pa03 $(OBJS) outputpartition0* memoutput*
+	rm -f pa03 $(OBJS) output* memoutput*
 
 
 
