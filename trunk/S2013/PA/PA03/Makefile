@@ -140,7 +140,8 @@ test17:
 	$(GCC) $(CFLAGS) -c $*.c
 
 clean:
-	rm -f pa03 $(OBJS) output* memoutput*
+	rm -f pa03 $(OBJS) output* memoutput* *sorted
+
 
 
 
