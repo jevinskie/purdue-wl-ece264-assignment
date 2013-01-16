@@ -5,11 +5,14 @@ use Cwd;
 my $MAX_SCORE;
 my $PPT;
 my $NUM_TC;
+my $NUM_Prob;
+my $NUM_TC_per_Prob;
 
 my @list;
 my $dir;
 my $totalScore;
 my @score;
+my @scoreEachProb;
 my $fail_info;
 
 my $line;
@@ -24,6 +27,8 @@ $MAX_SCORE = $ARGV[0];
 
 @list = `ls expected*`;
 $NUM_TC = scalar(@list);
+$NUM_Prob = 3;
+$NUM_TC_per_Prob = $NUM_TC/$NUM_Prob;
 
 if($ARGV[1] == 1){
     $PPT =  (0.95 * $MAX_SCORE) / $NUM_TC;
@@ -42,6 +47,9 @@ print "GRADING RESULTS\n";
 #initalize score
 for($i = 0; $i < $NUM_TC; $i++) {
     $score[$i] = 0;
+}
+for($i = 0; $i < $NUM_Prob; $i++) {
+    $scoreEachProb[$i] = 0;
 }
 
 $totalScore = 0;
@@ -86,12 +94,20 @@ for($i = 0; $i < $NUM_TC; $i++) {
     }
 }
 
+for ($i = 0; $i < $NUM_Prob; $i++) {
+    for ($j = 0; $j < $NUM_TC_per_Prob; $j++) {
+	$scoreEachProb[$i] += $score[$i * $NUM_TC_per_Prob + $j];
+    }
+}
 	
 for ($i = 0; $i < $NUM_TC; $i++) {
     $totalScore = $totalScore + $score[$i];
 }	
 
 #print student's score on screen
-print "\nSCORE = $totalScore/$MAX_SCORE\n";
+for ($i = 0; $i < $NUM_Prob; $i++) {
+    print "\nScore for Problem $i: $scoreEachProb[$i]";
+}
+print "\n\nTOTAL SCORE = $totalScore/$MAX_SCORE\n";
 print "DONE\n\n";
 
