@@ -95,14 +95,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 	    }
 		
 		if ($isMaTestSuccess == 0) {
-			open(MEM, "<memoutput$i");
-			while ($line = <MEM>) {
-				if ($line =~ m/ERROR SUMMARY: [0-9]* errors from [0-9]* contexts/){
-					print $1."Ocho\n"
-				}	
-			}
-			close(MEM);
-			print "memory access test $i fails\n";
+			print "memory access test $i fails.  Check memoutput$i to see whtat the errors are\n";
 			#$score[$i] = $score[$i] - ($PPT/2); 
 	    }
 
