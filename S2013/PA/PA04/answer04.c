@@ -101,9 +101,12 @@ int countString(char * file1, char * file2, char * str)
  * same line. If this occurs, the function should count all all
  * occurrences.
  *
+ * You need to count the string within each line. Do not count if the
+ * string spans two or more lines.
+ *
  * For simplicity, we assume that each line contains at most 80
  * characters.  Use LEN_LINE and do not use 80.  If LEN_LINE is
- * changed at the top of this file, you do not need to chance anything
+ * defined at the top of this file, you do not need to define anything
  * below.  You will lose 0.2 point if you use 80 or any number below.
  * If you need a number, define a symbol at the top of this file.
  *
