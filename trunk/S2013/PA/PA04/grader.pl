@@ -95,7 +95,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 	    }
 		
 		if ($isMaTestSuccess == 0) {
-			print "memory access test $i fails.  Check memoutput$i to see whtat the errors are\n";
+			print "memory access test $i fails.  Check memoutput$i to see whtat the errors are. \n";
 			#$score[$i] = $score[$i] - ($PPT/2); 
 	    }
 
@@ -125,5 +125,7 @@ for ($i = 0; $i < $NUM_Prob+1; $i++) {
     print "\nScore for Problem $i: $scoreEachProb[$i]";
 }
 print "\n\nTOTAL SCORE = $totalScore/$MAX_SCORE\n";
+print "\nYour Program will be manually graded for styling and implementation correctness\n";
+print "This manual grading can have affect on your final grade\n";  
 print "DONE\n\n";
 
