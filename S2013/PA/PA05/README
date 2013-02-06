@@ -17,6 +17,9 @@ free(), you are not solving this problem in the easiest way possible.
 We will not deduct points for the use of dynamic memory management,
 but you are reponsible for any memory leaks you may introduce.
 
+A NULL-terminated string contains '\0' as the end of the string.  You
+do not need to worry about the characters (if any) after '\0'.
+
 NOTE:
 Type "make" to compile the source code.
 Type "make grade -s" to run the grading script.
