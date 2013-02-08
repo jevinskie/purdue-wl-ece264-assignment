@@ -122,7 +122,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 	    if ($unnecessaryByte[$i]>0){
 		print "memory usage for test$i exceeds the expected amount.\n";
 
-		# deduce 1% for every unnecessary byte
+		# deduct 1% for every unnecessary byte
 		$score[$i] = $score[$i] - ($MAX_SCORE*$unnecessaryByte[$i]/100);
 		if($score[$i]<0){
 		    $score[$i]=0;
