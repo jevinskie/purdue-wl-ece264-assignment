@@ -14,10 +14,14 @@ int countStudent(char * filename, int * numberStudent)
  *
  * Each student has an ID (integer) and a name (string).  For
  * simplicity, each student's name is only one string, not two for
- * first name an d last name.
+ * first name and last name.
  *
- * Each student's record uses one line; i.e., two students use two
- * differne
+ * Each student's record uses one line only. One student's record (ID
+ * and name) will not span in two or more lines.  
+ *
+ * Two students' records use two differne lines.  The input file does
+ * not contain any single line that has two (or more) students'
+ * records.
  *
  * The number of students is stored in numberStudent (notice that this
  * is a pointer).
@@ -26,7 +30,26 @@ int countStudent(char * filename, int * numberStudent)
  * as another student.  Otherwise, your program will print empty lines
  * in the output and this is incorrect.
  *
+ * An empty line may include space.  Thus, you cannot assume that an
+ * empty line has only the newline character '\n'.
+ *
  * The function closes the file and returns EXIT_SUCCESS.
+ *
+ * Hint: You can use the return value of fprintf to determine whether
+ * a line contains an integer.  For example, 
+ *
+ * int val;
+ * char str[MAXIMUM_LENGTH];
+ *
+ * fscanf(fptr, "%d", & val);
+ *
+ * return 1 if an integer is successfully read.
+ * If a line has no integer, fscanf returns zero.
+ *
+ * fscanf(fptr, "%d %s", & val, str);
+ *
+ * return 2 if an integer and a string are successfully read.
+ *
  */
 {
   return EXIT_SUCCESS;
@@ -59,7 +82,11 @@ int readStudent(char * filename, Student * studentArray,
  * EXIT_FAILURE.
  *
  * If the file is opened successfully, the function reads the
- * students' records and store the data in the second argument.
+ * students' records and stores the data in the second argument.
+ *
+ * Please be careful not to count empty lines or the end of the file
+ * as another student.  Otherwise, your program will print empty lines
+ * in the output and this is incorrect.
  *
  * The function closes the file and returns EXIT_SUCCESS.
  */
@@ -79,7 +106,10 @@ int writeStudent(char * filename, Student * studentArray,
  * EXIT_FAILURE.
  *
  * If the file is opened successfully, the function writes the
- * students' records to the file, one student per line.
+ * students' records to the file, one student per line.  The line for
+ * the last student should end with a newline character '\n'.
+ *
+ * This function should not write any empty line.  
  *
  * The function closes the file and returns EXIT_SUCCESS.
  */
@@ -143,7 +173,7 @@ void sortStudentbyName(Student * studentArray, int numberStudent)
  */
  
 {
-
+  qsort(...)
 }
 
 /*
@@ -151,5 +181,14 @@ void sortStudentbyName(Student * studentArray, int numberStudent)
  */
 
 void freeStudent(Student * studentArray, int numberStudent)
+/*
+ * This function releases the memory allocated for the Student array.
+ * Please remember that everything allocated using malloc must be
+ * released.
+ *
+ * Hint: Each student's name requires malloc earlier so they
+ * should be released now.
+ *
+ */
 {
 }
