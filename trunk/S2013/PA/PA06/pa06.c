@@ -1,3 +1,7 @@
+/*
+ * Do not modify this file.
+ * If you modify this file, your program will fail in grading.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "pa06.h"

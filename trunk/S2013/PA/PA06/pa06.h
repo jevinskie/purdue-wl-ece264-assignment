@@ -1,7 +1,7 @@
 /* 
  * Do not modify this file
  * 
- * If you change this file. You will receive zero.
+ * If you modify this file. Your program will fail in grading.
  *
  */
 #ifndef _PA06_H_
