@@ -72,3 +72,9 @@ Your program needs to have the following functions:
   MAXIMUM_LENGTH inside each function as a local variable. 
 
   You should never have any global variable.
+
+
+NOTE:
+Type "make" to compile the source code.
+Type "make grade -s" to run the grading script.
+Type "make clean" to remove generated files.
