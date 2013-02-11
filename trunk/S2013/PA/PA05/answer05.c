@@ -1,5 +1,11 @@
 #include "pa05.h"
-
+/*
+ *
+ * You will receive no point if you use the built-in string functions,
+ * including but not limited to strlen, strcpy, strcat, strncat,
+ * strstr.
+ *
+ */ 
 /**
  * Count the number of characters in a NULL-terminated string s (not
  * counting the NULL character).
