@@ -118,62 +118,18 @@ int writeStudent(char * filename, Student * studentArray,
 }
 
 
+void swapStudent(Student * student1, Student * student2)
 /*
- * ================================================
- */
-
-/*
- * Write a comparison function based on students' IDs for qsort
- */
-
-int compID(...)
-{
-  return 0;
-}
-
-/*
- * ================================================
- */
-
-void sortStudentbyID(Student * studentArray, int numberStudent)
-/*
- * This function sorts the students by their IDs.  
+ * swap the IDs and the names of the two students 
  *
- * You MUST use the qsort function in C library.  You must NOT
- * implement your own sorting function.  You will lose 20% points if
- * you implement your own sorting function.
+ * Allocate only necessary memory. You cannot assume that every
+ * student's name has MAXIMUM_LENGTH characters.
  *
+ * Hint: Please be careful that the two students' names
+ * may have different lengths.  
  */
- 
 {
-  qsort(...);
-}
-
-/*
- * Write a comparison function based on students' names for qsort
- */
-
-int compName(...)
-{
-  return 0;
-}
-
-/*
- * ================================================
- */
-
-void sortStudentbyName(Student * studentArray, int numberStudent)
-/*
- * This function sorts the students by their names.  
- *
- * You MUST use the qsort function in C library.  You must NOT
- * implement your own sorting function.  You will lose 20% points if
- * you implement your own sorting function.
- *
- */
- 
-{
-  qsort(...)
+  
 }
 
 /*
@@ -192,3 +148,56 @@ void freeStudent(Student * studentArray, int numberStudent)
  */
 {
 }
+
+/*
+ * ====== Do not modify anything below ===================
+ */
+
+void sortStudentbyID(Student * studentArray, int numberStudent)
+/* This function sorts the students by their IDs. */
+{
+  /* use selection sort */
+  int ind1, ind2;
+  for (ind1 = 0; ind1 < numberStudent; ind1 ++)
+    {
+      int minInd = ind1;
+      for (ind2 = ind1 + 1; ind2 < numberStudent; ind2 ++)
+	{
+	  if (studentArray[minInd].ID > studentArray[ind2].ID)
+	    {
+	      minInd = ind2;
+	    }
+	}
+      if (minInd != ind1)
+	{
+	  swapStudent(& (studentArray[minInd]), & (studentArray[ind1]));
+	}
+    }
+}
+
+/*
+ * ================================================
+ */
+
+void sortStudentbyName(Student * studentArray, int numberStudent)
+/* This function sorts the students by their names. */
+{
+  int ind1, ind2;
+  for (ind1 = 0; ind1 < numberStudent; ind1 ++)
+    {
+      int minInd = ind1;
+      for (ind2 = ind1 + 1; ind2 < numberStudent; ind2 ++)
+	{
+	  if (strcmp(studentArray[minInd].name, 
+		     studentArray[ind2].name) > 0)
+	    {
+	      minInd = ind2;
+	    }
+	}
+      if (minInd != ind1)
+	{
+	  swapStudent(& (studentArray[minInd]), & (studentArray[ind1]));
+	}
+    }  
+}
+
