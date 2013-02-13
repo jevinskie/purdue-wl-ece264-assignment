@@ -7,7 +7,7 @@ VALGRIND = valgrind --tool=memcheck --leak-check=full --verbose
 pa06: $(OBJS) $(HDRS)
 	$(GCC) $(CFLAGS) $(OBJS) -o $@
 
-grade:
+grade: pa06
 	perl grader.pl 4 2 10
 
 .c.o: 
