@@ -25,5 +25,6 @@ int writeStudent(char * filename, Student * studentArray,
 		 int numberStudent);
 void sortStudentbyID(Student * studentArray, int numberStudent);
 void sortStudentbyName(Student * studentArray, int numberStudent);
+void swapStudent(Student * student1, Student * student2);
 void freeStudent(Student * studentArray, int numberStudent);
 #endif
