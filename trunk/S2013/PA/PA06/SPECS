@@ -2,16 +2,11 @@ In this assignment, you need to write README and submit it with your
 program.
 
 This assignment has the following purposes:
-
-* learn how to allocate memory when the program runs.  You do not know
+learn how to allocate memory when the program runs.  You do not know
   the amount of memory needed in advance.  Your program will allocate
   memory only after the program knows the file to read.  For this
   reason, your program will be manually checked to determine whether
   the program uses memory correctly.
-
-* learn how to use the built-in qsort function to sort data.  You will
-  need to know how to call this function and how to write comparison
-  functions called by qsort.
 
 This assignment asks you to write a program that uses a structure called
 Student.  Each Student object has two attributes: 
@@ -28,15 +23,13 @@ Your program needs to have the following functions:
   again and store the data in memory.
 
 * Sort the students' data by the IDs and by the names.  You need to
-  sort the data by using the qsort function given in the C
-  library. You need to write the appropriate comparison function(s)
+  sort the data by using the sorting function given to you.
+  You need to write the appropriate swap function(s)
 
-* If two students have the same ID, qsort does not guarantee the order
-  of their names. If two students have the same name, qsort does not
-  guarantee the order of their IDs.  For this reason, each input file
-  has unique IDs and unique names.  If you find a file that has
-  duplicate IDs or duplicate names, this input file is invalid.
-  Please inform the instructor if you find an invalid input file.
+* Each input file has unique IDs and unique names.  If you find 
+  a file that has duplicate IDs or duplicate names, this input 
+  file is invalid. Please inform the instructor if you find an 
+  invalid input file.
 
 * Write the sorted student data into files.
 
