@@ -26,7 +26,8 @@ my @temp;
 my @heap;
 my @unnecessaryByte;
 # Set standard heap usage values in PA06 for test0 ~ test9
-@heap = (1575,1775,1931,2103,2283,2446,2629,2284,2039,1891);
+#@heap =(1575,1775,1931,2103,2283,2446,2629,2284,2039,1891);
+@heap = (2519,2799,3035,3287,3547,3790,4053,3548,3207,2971);
 
 # Set maximum possible scores
 $MAX_SCORE = $ARGV[0];
