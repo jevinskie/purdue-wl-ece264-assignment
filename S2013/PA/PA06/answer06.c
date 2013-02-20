@@ -35,7 +35,7 @@ int countStudent(char * filename, int * numberStudent)
  *
  * The function closes the file and returns EXIT_SUCCESS.
  *
- * Hint: You can use the return value of fprintf to determine whether
+ * Hint: You can use the return value of fscanf to determine whether
  * a line contains an integer.  For example, 
  *
  * int val;
