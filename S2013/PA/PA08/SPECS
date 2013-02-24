@@ -106,3 +106,16 @@ Type "make" to compile the source code.
 Type "make grade -s" to run the grading script.
 Type "make clean" to remove generated files.
 
+For test10, test11, and test12, The grading script will print
+readStudent fail
+make[1]: *** [test10] Error 1
+make test10 passes
+
+or
+
+writeStudent fail
+make[1]: *** [test12] Error 1
+make test12 passes
+
+These test cases have passed, they just have a different return value
+that causes the Makefile to complain. 
