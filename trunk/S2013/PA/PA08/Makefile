@@ -8,7 +8,7 @@ pa08: $(OBJS) $(HDRS)
 	$(GCC) $(CFLAGS) $(OBJS) -o $@
 
 grade:
-	perl grader.pl 4 2 10
+	perl grader.pl 4 1 10
 
 .c.o: 
 	$(GCC) $(CFLAGS) -c $*.c
@@ -66,6 +66,22 @@ test9: pa08
 	@diff -w outputs/output10ID expected/expected10ID
 	@diff -w outputs/output10Name expected/expected10Name
 
+test10: pa08
+	@$(VALGRIND) --log-file=outputs/memoutput10 ./pa08 inputs/input11 outputs/output11ID outputs/output11Name
+	@diff -w outputs/output11ID expected/expected11ID
+	@diff -w outputs/output11Name expected/expected11Name
+
+test11: pa08
+	@$(VALGRIND) --log-file=outputs/memoutput11 ./pa08 inputs/input12 outputs/output12ID outputs/output12Name
+
+test12: pa08
+	@touch outputs/output13ID
+	@touch outputs/output13Name
+	@chmod 444 outputs/output13ID
+	@chmod 444 outputs/output13Name
+	@$(VALGRIND) --log-file=outputs/memoutput12 ./pa08 inputs/input01 outputs/output13ID outputs/output13Name
+	@rm outputs/output13ID
+	@rm outputs/output13Name
 
 
 
