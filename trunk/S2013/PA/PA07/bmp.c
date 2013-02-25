@@ -6,6 +6,12 @@
 #define BMP_HEADER_BITS 24
 #define BMP_HEADER_PLANE 1
 
+/*
+ * 	You cannot use any "mysterious constants" below.
+ * 	You need to define symbols above and use the symbols.
+ * 	0 or 1 below are acceptable.
+ */
+
 BMP_Image *BMP_create(BMP_Header *header)
 {
     // FILL IN CODE HERE!
