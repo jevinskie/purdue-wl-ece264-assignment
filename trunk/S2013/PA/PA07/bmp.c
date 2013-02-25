@@ -2,6 +2,9 @@
 #include <stdio.h>
 
 #include "bmp.h"
+#define BMP_HEADER_TYPE 0x4d42
+#define BMP_HEADER_BITS 24
+#define BMP_HEADER_PLANE 1
 
 BMP_Image *BMP_create(BMP_Header *header)
 {
@@ -66,13 +69,13 @@ int BMP_save(BMP_Image *image, const char *filename)
 int BMP_checkValid(BMP_Header *header)
 {
     // Make sure this is a BMP file
-    if (header->type != 0x4d42) return 0;
+    if (header->type != BMP_HEADER_TYPE) return 0;
 
     // Make sure we are getting 24 bits per pixel
-    if (header->bits != 24) return 0;
+    if (header->bits != BMP_HEADER_BITS) return 0;
 
     // Make sure there is only one image plane
-    if (header->planes != 1) return 0;
+    if (header->planes != BMP_HEADER_PLANE) return 0;
 
     // Make sure there is no compression
     if (header->compression != 0) return 0;
@@ -82,7 +85,7 @@ int BMP_checkValid(BMP_Header *header)
 
 void BMP_printHeader(BMP_Header *header)
 {
-    printf("file type (should be 0x4d42): %x\n", header->type);
+    printf("file type (should be %x): %x\n", BMP_HEADER_TYPE, header->type);
     printf("file size: %d\n", header->size);
     printf("offset to image data: %d\n", header->offset);
     printf("header size: %d\n", header->header_size);

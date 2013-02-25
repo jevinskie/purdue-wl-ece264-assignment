@@ -10,7 +10,7 @@ pa07: $(OBJS)
 	$(GCC) $(CFLAGS) -c $*.c 
 
 clean:
-	rm *.o pa07 outputs/*
+	rm -f *.o pa07 outputs/*
 
 
 grade:
