@@ -92,21 +92,7 @@ pa07.c, however, to test functionalities of individual functions.
 SPECIFICATIONS
 ==============
 
-* You should use the following print statement if the user does not
-  give enough command line arguments (and exit with EXIT_FAILURE):
-  printf("Usage: pa07 <source> <destination>\n");
-
-* You should use the following print statement if unable to open the
-  file (and exit with EXIT_FAILURE):  
-  printf("Unable to open file!\n");
-
-* You should use the following print statement if the dynamic memory
-  is not allocated properly (and exit with EXIT_FAILURE):
-  printf("Unable to allocate memory!\n");
-
-* You should use the following print statement if the input BMP file
-  is not valid (use BMP_checkValid) (and exit with EXIT_FAILURE):
-  printf("BMP file not valid!\n");
+* Note that the 54-btye header actually consists of a 14-byte pre-header, following 40-byte of the "real" header. Therefore it is correct when you run BMP_printHeader and see "header size: 40" instead of 54. 
 
 * The source file (argv[1]) and the destination file (argv[2]) are
   command-line arguments.
