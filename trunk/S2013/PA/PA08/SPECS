@@ -119,3 +119,24 @@ make test12 passes
 
 These test cases have passed, they just have a different return value
 that causes the Makefile to complain. 
+
+*******************************
+* About Testing and Debugging *
+*******************************
+
+We intentionally not to write a function that would print the linked
+on screen list after it is read from the file (by readStudent) or after 
+it is sorted. There are two reasons.   First, it is not necessary for 
+grading this assignment because everything printed on the display is 
+discarded for grading.  Second, you need to make a judgment whether you 
+should write this function for testing and debugging.  If your 
+program works correctly, you do not need it.  If your program has 
+problems, you may want to print the linked lists before sorting it.  
+You want to know whether problems occur before sorting or after sorting.
+
+The concept we want to convey here is this: often you write functions for 
+testing and debugging even though the functions are not graded.
+
+It is common to write additional functions to ensure the necessary
+functions are correct.  It is common that writing the additional functions
+can save your time in testing and debugging. 
