@@ -125,7 +125,7 @@ that causes the Makefile to complain.
 *******************************
 
 We intentionally not to write a function that would print the linked
-on screen list after it is read from the file (by readStudent) or after 
+list on screen after the list is read from the file (by readStudent) or after 
 it is sorted. There are two reasons.   First, it is not necessary for 
 grading this assignment because everything printed on the display is 
 discarded for grading.  Second, you need to make a judgment whether you 
