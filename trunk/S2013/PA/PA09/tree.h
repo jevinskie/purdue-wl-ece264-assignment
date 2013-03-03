@@ -12,4 +12,5 @@ typedef struct treenode
 
 Tree * readTree(char * infile);
 int writeTree(char * outfile, Tree * root);
+void destroyTree(Tree * root);
 #endif
