@@ -16,12 +16,11 @@ int main(int argc, char ** argv)
   /* 
    * check whether there are enough arguments. Before using argv[1]
    * and argv[2], the program must check whether argc is large enough.
+   * If there are not enough arguments, the program returns
+   * EXIT_FAILURE;
    */
-  if (argc < 3)
-    {
-      printf("need two file names: input and output");
-      return EXIT_FAILURE;
-    }
+
+
 
   /* do not modify anything below */
   Tree * root = readTree(argv[1]);
