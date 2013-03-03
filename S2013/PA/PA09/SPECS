@@ -2,7 +2,7 @@ In this assignment, you need to submit the following files:
 
 README
 Makefile
-pa09.c
+pa09.c (You need to modify pa09.c.)
 tree.h
 tree.c
 helper.h
