@@ -28,5 +28,7 @@ int main(int argc, char ** argv)
     {
       return EXIT_FAILURE;
     }
-  return writeTree(argv[2], root);
+  int rval = writeTree(argv[2], root);
+  destroyTree(root);
+  return rval;
 }
