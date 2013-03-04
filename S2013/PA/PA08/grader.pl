@@ -66,11 +66,12 @@ if($ARGV[1] == 1){
     for($i = $NUM_TC-1; $i <= $NUM_TC+1; $i++) {
 		if((system("make test$i") == 512)) {
 			print "test$i passes\n";
-			if($i == 10)
+			if($i == 10){
 				$totalScore += $PPT;
-			else	
+}
+			else	{
 				$totalScore += 0.025 * $MAX_SCORE;	
-		} 
+		}} 
 		else {
 			$fail_info = `make test$i 2>&1`;
 			print "test$i fails\n";
