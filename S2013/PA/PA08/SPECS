@@ -83,9 +83,9 @@ Your program needs to have the following functions:
 
 The purpose of this assignment is to help you understand linked list.
 Thus, for this assignment, you cannot use fseek or rewind.  You will
-receive zero if your program uses fseek or rewind. You cannot use
-fopen, count the length, fclose, allocate memory, and the fopen
-again. (This is an indirect way of calling fseek.)
+receive zero if your program uses fseek or rewind. 
+
+You cannot use fopen twice because this is an indirect way of calling fseek.
 
 In this assignment, you will likely need to write some functions to
 help the required functions.
