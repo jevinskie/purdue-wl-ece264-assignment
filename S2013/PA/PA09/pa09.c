@@ -24,10 +24,6 @@ int main(int argc, char ** argv)
 
   /* do not modify anything below */
   Tree * root = readTree(argv[1]);
-  if (root == NULL)
-    {
-      return EXIT_FAILURE;
-    }
   int rval = writeTree(argv[2], root);
   destroyTree(root);
   return rval;
