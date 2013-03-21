@@ -37,11 +37,11 @@ Tree * Tree_delete(Tree * root, int val)
  * 2. If this node has only one child, make this node's parent * point
  * to this node's child and release the memory occupied by this * node.
  *
- * 3. If this node has two children, find this node's * successor. The
- * successor is the node that appears immediately after * this node in
- * in-order traversal. The successor must be on the right * side of
- * this node.  Exchange the values of this node and the *
- * successor. Delete the successor.
+ * 3. If this node has two children, find this node's successor. The
+ * successor is the node that appears immediately after this node in
+ * in-order traversal. The successor must be on the right side of this
+ * node.  Exchange the values of this node and the successor. Delete
+ * the successor.
  *
  */
 {
