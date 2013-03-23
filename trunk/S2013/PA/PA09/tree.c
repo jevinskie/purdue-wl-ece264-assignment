@@ -101,8 +101,8 @@ int postOrder(char * outfile, Tree * root)
 
 int writeTree(char * outfile, Tree * root)
 /*
- * If the tree is empty, the function returns EXIT_SUCCESS without
- * creating an empty file.
+ * If the tree is empty, the function creates an empty file
+ * and returns EXIT_SUCCESS.
  *
  * The function opens a file whose name is given by the argument.
  *
