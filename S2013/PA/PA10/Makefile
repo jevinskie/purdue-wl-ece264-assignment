@@ -63,6 +63,48 @@ test10: pa10
 test11: pa10
 	@$(VALGRIND) --log-file=outputs/memoutput11 ./pa10 inputs/input11 > outputs/output11
 	diff -w outputs/output11 expected/expected11
+
+extra: pa10
+	@$(VALGRIND) --log-file=outputs/memoutput12 ./pa10 inputs/input12 > outputs/output12
+	diff -w outputs/output12 expected/expected12
+	@$(VALGRIND) --log-file=outputs/memoutput13 ./pa10 inputs/input13 > outputs/output13
+	diff -w outputs/output13 expected/expected13
+	@$(VALGRIND) --log-file=outputs/memoutput14 ./pa10 inputs/input14 > outputs/output14
+	diff -w outputs/output14 expected/expected14
+	@$(VALGRIND) --log-file=outputs/memoutput15 ./pa10 inputs/input15 > outputs/output15
+	diff -w outputs/output15 expected/expected16
+	@$(VALGRIND) --log-file=outputs/memoutput16 ./pa10 inputs/input16 > outputs/output16
+	diff -w outputs/output16 expected/expected16
+	@$(VALGRIND) --log-file=outputs/memoutput17 ./pa10 inputs/input17 > outputs/output17
+	diff -w outputs/output17 expected/expected17
+	@$(VALGRIND) --log-file=outputs/memoutput18 ./pa10 inputs/input18 > outputs/output18
+	diff -w outputs/output18 expected/expected18
+	@$(VALGRIND) --log-file=outputs/memoutput19 ./pa10 inputs/input19 > outputs/output19
+	diff -w outputs/output19 expected/expected19
+	@$(VALGRIND) --log-file=outputs/memoutput20 ./pa10 inputs/input20 > outputs/output20
+	diff -w outputs/output20 expected/expected20
+	@$(VALGRIND) --log-file=outputs/memoutput21 ./pa10 inputs/input21 > outputs/output21
+	diff -w outputs/output21 expected/expected21
+	@$(VALGRIND) --log-file=outputs/memoutput22 ./pa10 inputs/input22 > outputs/output22
+	diff -w outputs/output22 expected/expected22
+	@$(VALGRIND) --log-file=outputs/memoutput23 ./pa10 inputs/input23 > outputs/output23
+	diff -w outputs/output23 expected/expected23
+	@$(VALGRIND) --log-file=outputs/memoutput24 ./pa10 inputs/input24 > outputs/output24
+	diff -w outputs/output24 expected/expected24
+	@$(VALGRIND) --log-file=outputs/memoutput25 ./pa10 inputs/input25 > outputs/output25
+	diff -w outputs/output25 expected/expected25
+	@$(VALGRIND) --log-file=outputs/memoutput26 ./pa10 inputs/input26 > outputs/output26
+	diff -w outputs/output26 expected/expected26
+	@$(VALGRIND) --log-file=outputs/memoutput27 ./pa10 inputs/input27 > outputs/output27
+	diff -w outputs/output27 expected/expected27
+	@$(VALGRIND) --log-file=outputs/memoutput28 ./pa10 inputs/input28 > outputs/output28
+	diff -w outputs/output28 expected/expected28
+	@$(VALGRIND) --log-file=outputs/memoutput29 ./pa10 inputs/input29 > outputs/output29
+	diff -w outputs/output29 expected/expected29
+	@$(VALGRIND) --log-file=outputs/memoutput30 ./pa10 inputs/input30 > outputs/output30
+	diff -w outputs/output30 expected/expected30
+	@$(VALGRIND) --log-file=outputs/memoutput31 ./pa10 inputs/input31 > outputs/output31
+	diff -w outputs/output31 expected/expected31
 	
 clean:
 	rm -f pa10 $(OBJS) outputs/*
