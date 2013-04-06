@@ -215,17 +215,13 @@ GRADING
 
 The maximum score for this exercise is 4.0 points.  
 
-There are two rules to check the execution of your code. 
-  make correct - checks the correctness of your code
-  make perform - checks the runtimes your code
-
-We will NOT grade the correctness check.  We are grading the performance
-section.  If your code runs slower than the maximum allowed runtime, you
-will lose points in proportion with how much longer the runtime.  Since
-multiple people may be running on the quatro machines, it is possible
-that the runtime of your program may be slower that it should be.  If
-you feel that your program is faster than what is being reported, execute
-your program at another time.  
+We will first examine the correctness of your code.  After checking 
+correctness, we will then examine the runtimes of your code.  If your 
+code runs slower than the maximum allowed runtime, you will lose points 
+in proportion with how much longer the runtime.  Since multiple people 
+may be running on the quatro machines, it is possible that the runtime
+of your program may be slower than it should be.  If you feel that your program is faster than what is being reported, execute your program at
+another time.  
 
 If you had errors in PA07, you can earn up to 80% of the maximum score
 of PA07 by completing this assignment.

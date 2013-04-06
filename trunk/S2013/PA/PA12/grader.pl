@@ -13,6 +13,7 @@ my $dir;
 my $totalScore;
 my @score;
 my @tcscore;
+my $prefscore;
 my $fail_info;
 
 my $line;
@@ -40,113 +41,81 @@ elsif($ARGV[1] == 2){
     $PPT =  $MAX_SCORE / $NUM_TC;
 }
 
-print "GRADING RESULTS\n";
-if($GTYPE == 1){
-	print "Checking Correctness.  This is not scored\n";
-	
-	#initalize score
-	for($i = 0; $i < $NUM_TC; $i++) {
-		$score[$i] = 0;
-	}
-
-	
-	$totalScore = 0;
-	
-	if($ARGV[1] == 1){
-		for($i = $NUM_TC; $i <= $NUM_TC+1; $i++) {
-			if((system("make corrtest$i") == 512)) {
-				#	    print "make corrtest$i passes\n";
-				$score[$i] = 0.025 * $MAX_SCORE;	
-			} else {
-				$fail_info = `make corrtest$i 2>&1`;
-				print "corrtest$i fails\n";
-				print "$fail_info\n\n";
-			}
-		}
-	}
-	
-	print "Running $NUM_TC tests\n";
-	for($i = 0; $i < $NUM_TC; $i++) {
-		if(system("make corrtest$i") == 0) {
-			print "corrtest$i passes\n";
-			$score[$i] = $PPT;
-			$isMemTestSuccess = 0;
-			$isMaTestSuccess = 0;
-			if(-e "memoutput$i"){
-				open(MEM, "<memoutput$i");
-				while ($line = <MEM>) {
-					if ($line =~ m/All heap blocks were freed -- no leaks are possible/){
-						#				print "memory management test passes\n";
-						$isMemTestSuccess = 1;
-					}
-					elsif ($line =~ m/ERROR SUMMARY: 0 errors from 0 contexts/){
-						#				print "memory access test passes\n";
-						$isMaTestSuccess = 1;
-					}
-				}
-				close(MEM);
-				
-				if ($isMemTestSuccess == 0) {
-					print "memory management test $i fails\n";
-					$score[$i] = $score[$i] - ($PPT/2); 
-				}
-				
-				if ($isMaTestSuccess == 0) {
-					print "memory access test $i fails.  Check memoutput$i to see whtat the errors are\n";
-					#$score[$i] = $score[$i] - ($PPT/2); 
-				}
-				
-				
-			}
-			
-		} else {
-			$fail_info = `make corrtest$i 2>&1`;
-			print "corrtest$i fails\n";
-			print "$fail_info\n";
-		}
-	}
-	
-	
-	for ($i = 0; $i < $NUM_TC; $i++) {
-		$totalScore = $totalScore + $score[$i];
-	}	
-	
-	#print student's score on screen
-	#printf("\n\nTOTAL SCORE = %.2f/%.2f\n", $totalScore, $MAX_SCORE);
-	#print "\nYour Program will be manually graded for styling and implementation correctness\n";
-	#print "This manual grading can have affect on your final grade\n";
-	print "DONE\n\n";
-}
-
 #correct directory path
 #$dir = quotemeta($_);
 
 #Run executable and tests in testing directory	
-else{
-
-	my @host = `hostname`;
-	my @currline;
-	my @numthreads = (4,10,20,8,16,32,2,16,64,40,24,30,56,48,32);
-	my @PPT_ARRAY = (.2, .2, .2, .2, .2, .2, .2, .2, .5, .3, .3, .3,.4,.3,.3);
+print "GRADING RESULTS\n";
+print "\nChecking Correctness.\n";
 	
-	if($host[0] =~ m/quatro/){
-		print "Running $NUM_TC tests\n";
-		for($i = 0; $i < $NUM_TC; $i++) {
-			#initalize score
-			$tcscore[$i] = 0;
-			$PPT = $PPT_ARRAY[$i] / $numthreads[$i];
-			
-			for($j = 0; $j < $numthreads[$i]; $j++) {
-				$score[$i] = 0;
+my @host = `hostname`;
+my @currline;
+my @numthreads = (4,10,20,8,16,32,2,16,64,40,24,30,56,48,32);
+my @PPT_ARRAY = (.2, .2, .2, .2, .2, .2, .2, .2, .5, .3, .3, .3,.4,.3,.3);
+	
+#initalize score
+for($i = 0; $i < $NUM_TC; $i++) {
+	$score[$i] = 0;
+}
+
+$totalScore = 0;
+	
+if($ARGV[1] == 1){
+	for($i = $NUM_TC; $i <= $NUM_TC+1; $i++) {
+		if((system("make corrtest$i") == 512)) {
+			#print "make corrtest$i passes\n";
+			$score[$i] = 0.025 * $MAX_SCORE;	
+		} else {
+			$fail_info = `make corrtest$i 2>&1`;
+			print "corrtest$i fails\n";
+			print "$fail_info\n\n";
+		}
+	}
+}
+	
+print "Running $NUM_TC tests\n";
+for($i = 0; $i < $NUM_TC; $i++) {
+	if(system("make corrtest$i") == 0) {
+		print "Correctness Test $i passes\n";
+		$score[$i] = $PPT_ARRAY[$i];
+		$isMemTestSuccess = 0;
+		$isMaTestSuccess = 0;
+		if(-e "memoutput$i"){
+			open(MEM, "<memoutput$i");
+			while ($line = <MEM>) {
+				if ($line =~ m/All heap blocks were freed -- no leaks are possible/){
+					#print "memory management test passes\n";
+					$isMemTestSuccess = 1;
+				}
+				elsif ($line =~ m/ERROR SUMMARY: 0 errors from 0 contexts/){
+					#print "memory access test passes\n";
+					$isMaTestSuccess = 1;
+				}
 			}
-			
+			close(MEM);
+				
+			if ($isMemTestSuccess == 0) {
+				print "memory management test $i fails\n";
+				$score[$i] = $score[$i] - ($PPT_ARRAY[$i]/2); 
+			}
+				
+			if ($isMaTestSuccess == 0) {
+				print "memory access test $i fails.  Check memoutput$i to see whtat the errors are\n";
+				#$score[$i] = $score[$i] - ($PPT/2); 
+			}
+				
+				
+		}
+		
+		if($host[0] =~ m/quatro/){
 			if(system("make perftest$i") == 0) {
+				$prefscore = 0;
+				$PPT = $score[$i] / $numthreads[$i];
 				if(-e "outputs/timeinfo$i"){
 					my @stutimes;
 					my @exptimes;
 					open(TIMEINFO, "<outputs/timeinfo$i");
-
-				
+										
 					while ($line = <TIMEINFO>) {
 						if ($line =~ m/invert/){
 							@currline = split(" ", $line);
@@ -159,61 +128,35 @@ else{
 					while ($line = <EXPECTED>) {
 						if ($line =~ m/invert/){
 							@currline = split(" ", $line);
-							 push(@exptimes, $currline[4]);
+							push(@exptimes, $currline[4]);
 						}
 					}
 					close(EXPECTED);
 					
 					for($j = 0; $j < scalar(@stutimes); $j++){
 						if($stutimes[$j] > 3 * $exptimes[$j]){
-							$score[$i] = ((3 * $exptimes[$j]) / $stutimes[$j]) * $PPT;
+							$tcscore[$i] = ((3 * $exptimes[$j]) / $stutimes[$j]) * $PPT;
 						}
 						else{
-							$score[$i] = $PPT;
+							$tcscore[$i] = $PPT;
 						}
 					}
 				}
-					
+				
 				for($j = 0; $j < $numthreads[$i]; $j++){
-					$tcscore[$i] += $score[$j];
+					$prefscore += $tcscore[$j];
 				}
-					
-				if($tcscore[$i] = $PPT_ARRAY[$i]){
-					print "perftest$i passes\n";
+				
+				if($prefscore < $score[$i]){
+					$score[$i] = $prefscore;
+					print "One of more threads runns longer than the allowed maximum\n";
+
 				}
 				else{
-					print "perftest$i fails\n";
-					print "One of more threads runns longer than the allowed maximum";
+					print "Performance test $i passes\n";
 				}
-
-				$isMemTestSuccess = 0;
-				$isMaTestSuccess = 0;
-				if(-e "outputs/memoutput$i"){
-					open(MEM, "<outputs/memoutput$i");
-					while ($line = <MEM>) {
-						if ($line =~ m/All heap blocks were freed -- no leaks are possible/){
-							#				print "memory management test passes\n";
-							$isMemTestSuccess = 1;
-						}
-						elsif ($line =~ m/ERROR SUMMARY: 0 errors from 0 contexts/){
-							#				print "memory access test passes\n";
-							$isMaTestSuccess = 1;
-						}
-					}
-					close(MEM);
-					
-					if ($isMemTestSuccess == 0) {
-						print "memory management test $i fails\n";
-						$tcscore[$i] -= ($PPT_ARRAY[$i]/2); 
-					}
-					
-					if ($isMaTestSuccess == 0) {
-						print "memory access test $i fails.  Check memoutput$i to see whtat the errors are\n";
-						#$score[$i] = $score[$i] - ($PPT/2); 
-					}
-					
-					
-				}
+				
+				
 				
 			} else {
 				$fail_info = `make perftest$i 2>&1`;
@@ -222,20 +165,37 @@ else{
 			}
 		}
 		
+		else{
+			print "Performance test needs to be run on quatro01 or quatro01\n";
+		}
+			
+			
+	} else {
+		$fail_info = `make corrtest$i 2>&1`;
+		print "corrtest$i fails\n";
+		print "$fail_info\n";
 	}
-	else{
-		print "You need to log into one of the quatro machines to run this\n";
-	}
-	
-
-	for ($i = 0, $totalScore = 0; $i < $NUM_TC; $i++) {
-		$totalScore = $totalScore + $tcscore[$i];
-	}	
-	
-	printf("\n\nTOTAL SCORE = %.2f/%.2f\n", $totalScore, $MAX_SCORE);
-	print "\nYour Program will be manually graded for styling and implementation correctness\n";
-	print "This manual grading can have affect on your final grade\n";
-	print "DONE\n\n";
 }
+	
+	
+for ($i = 0; $i < $NUM_TC; $i++) {
+	$totalScore = $totalScore + $score[$i];
+}	
+
+if($host[0] =~ m/quatro/){
+}
+else{
+	$totalScore = 0;
+}
+#print student's score on screen
+printf("\n\nTOTAL SCORE = %.2f/%.2f\n", $totalScore, $MAX_SCORE);
+print "\nYour Program will be manually graded for styling and implementation correctness\n";
+print "This manual grading can have affect on your final grade\n";
+print "DONE\n\n";
+
+
+
+
+
 
 
