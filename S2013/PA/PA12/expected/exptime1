@@ -1,0 +1,109 @@
+file type (should be 0x4d42): 4d42
+file size: 421554
+offset to image data: 54
+header size: 40
+width: 500
+height: 281
+planes: 1
+bits: 24
+load time:   0.3497
+blocks = 0 421499
+1 threads, invert time:   0.0237
+blocks = 0 421499
+blocks = 0 210750
+blocks = 210751 421499
+2 threads, invert time:   0.0130
+blocks = 0 210750
+blocks = 210751 421499
+blocks = 0 140500
+blocks = 140501 281001
+blocks = 281002 421499
+3 threads, invert time:   0.0103
+blocks = 0 140500
+blocks = 140501 281001
+blocks = 281002 421499
+blocks = 0 105375
+blocks = 105376 210751
+blocks = 210752 316127
+blocks = 316128 421499
+4 threads, invert time:   0.0111
+blocks = 0 105375
+blocks = 105376 210751
+blocks = 210752 316127
+blocks = 316128 421499
+blocks = 0 84300
+blocks = 84301 168601
+blocks = 168602 252902
+blocks = 252903 337203
+blocks = 337204 421499
+5 threads, invert time:   0.0125
+blocks = 0 84300
+blocks = 84301 168601
+blocks = 168602 252902
+blocks = 252903 337203
+blocks = 337204 421499
+blocks = 0 70250
+blocks = 70251 140501
+blocks = 140502 210752
+blocks = 210753 281003
+blocks = 281004 351254
+blocks = 351255 421499
+6 threads, invert time:   0.0196
+blocks = 0 70250
+blocks = 70251 140501
+blocks = 140502 210752
+blocks = 210753 281003
+blocks = 281004 351254
+blocks = 351255 421499
+blocks = 0 60214
+blocks = 60215 120429
+blocks = 120430 180644
+blocks = 180645 240859
+blocks = 240860 301074
+blocks = 301075 361289
+blocks = 361290 421499
+7 threads, invert time:   0.0188
+blocks = 0 60214
+blocks = 60215 120429
+blocks = 120430 180644
+blocks = 180645 240859
+blocks = 240860 301074
+blocks = 301075 361289
+blocks = 361290 421499
+blocks = 0 52687
+blocks = 52688 105375
+blocks = 105376 158063
+blocks = 158064 210751
+blocks = 210752 263439
+blocks = 263440 316127
+blocks = 316128 368815
+blocks = 368816 421499
+8 threads, invert time:   0.0195
+blocks = 0 52687
+blocks = 52688 105375
+blocks = 105376 158063
+blocks = 158064 210751
+blocks = 210752 263439
+blocks = 263440 316127
+blocks = 316128 368815
+blocks = 368816 421499
+blocks = 0 46833
+blocks = 46834 93667
+blocks = 93668 140501
+blocks = 140502 187335
+blocks = 187336 234169
+blocks = 234170 281003
+blocks = 281004 327837
+blocks = 327838 374671
+blocks = 374672 421499
+9 threads, invert time:   0.0080
+blocks = 0 46833
+blocks = 46834 93667
+blocks = 93668 140501
+blocks = 140502 187335
+blocks = 187336 234169
+blocks = 234170 281003
+blocks = 281004 327837
+blocks = 327838 374671
+blocks = 374672 421499
+save time:   0.1255
