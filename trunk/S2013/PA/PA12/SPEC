@@ -189,6 +189,15 @@ A couple of the testcases are quite large.  Running them may cause
 you to use all of the disk space.  Be sure to check your space by typing
 'quota'. 
 
+INPUTS
+=================
+
+The inputs for this program are not located in the inputs folder like
+the assignments.  Because some are large, they are located at the 
+path on the shay server:
+
+/home/shay/a/ece264z7/PA12/inputs 
+
 MEMORY MANAGEMENT
 =================
 
