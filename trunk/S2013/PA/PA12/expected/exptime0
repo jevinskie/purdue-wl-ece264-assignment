@@ -1,0 +1,25 @@
+file type (should be 0x4d42): 4d42
+file size: 856854
+offset to image data: 54
+header size: 40
+width: 700
+height: 408
+planes: 1
+bits: 24
+load time:   0.0233
+blocks = 0 856799
+1 threads, invert time:   0.0464
+blocks = 0 856799
+blocks = 0 428400
+blocks = 428401 856799
+2 threads, invert time:   0.0232
+blocks = 0 428400
+blocks = 428401 856799
+blocks = 0 285600
+blocks = 285601 571201
+blocks = 571202 856799
+3 threads, invert time:   0.0164
+blocks = 0 285600
+blocks = 285601 571201
+blocks = 571202 856799
+save time:   0.1780
