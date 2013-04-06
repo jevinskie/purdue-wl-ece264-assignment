@@ -6,11 +6,8 @@ VALGRIND = valgrind --tool=memcheck --leak-check=full --verbose --show-reachable
 pa12: $(OBJS)
 	$(GCC) $(CFLAGS) $(OBJS) -o $@ -lpthread
 	
-correct:
-	perl grader.pl 4 2 8 1
-	
-perform:
-	perl grader.pl 4 2 15 2
+grade:
+	perl grader.pl 4 2 15 
 
 .c.o: 
 	$(GCC) $(CFLAGS) -c $*.c 
