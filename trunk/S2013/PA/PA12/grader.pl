@@ -50,7 +50,7 @@ print "\nChecking Correctness.\n";
 	
 my @host = `hostname`;
 my @currline;
-my @numthreads = (4,10,20,8,16,32,2,16,64,40,24,30,56,48,32);
+my @numthreads = (56,10,20,8,16,32,64,16,2,40,24,30,4,48,32);
 my @PPT_ARRAY = (.2, .2, .2, .2, .2, .2, .2, .2, .5, .3, .3, .3,.4,.3,.3);
 	
 #initalize score
@@ -149,7 +149,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 				
 				if($prefscore < $score[$i]){
 					$score[$i] = $prefscore;
-					print "One of more threads runns longer than the allowed maximum\n";
+					print "One or more threads runs longer than the allowed maximum\n";
 
 				}
 				else{
