@@ -189,14 +189,16 @@ A couple of the testcases are quite large.  Running them may cause
 you to use all of the disk space.  Be sure to check your space by typing
 'quota'. 
 
-INPUTS
+INPUTS & OUTPUTS
 =================
 
-The inputs for this program are not located in the inputs folder like
-the assignments.  Because some are large, they are located at the 
-path on the shay server:
+The inputs and expected outputs for this program are not located in the inputs and outputs folders like previous assignments.  Because some are large, they are located at the following paths on the shay server:
 
+inputs
 /home/shay/a/ece264z7/PA12/inputs 
+
+expected outputs
+/home/shay/a/ece264z6/PA12/expected
 
 MEMORY MANAGEMENT
 =================
