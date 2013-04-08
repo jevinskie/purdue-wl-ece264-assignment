@@ -110,6 +110,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 		if($host[0] =~ m/quatro/){
 			if(system("make perftest$i") == 0) {
 				$prefscore = 0;
+				my $missedcount = 0;
 				$PPT = $score[$i] / $numthreads[$i];
 				if(-e "outputs/timeinfo$i"){
 					my @stutimes;
@@ -124,7 +125,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 					}
 					close(TIMEINFO);					
 					
-					open(EXPECTED, "<expected/exptime$i");
+					open(EXPECTED, "</home/shay/a/ece264z6/PA12/expected/exptime$i");
 					while ($line = <EXPECTED>) {
 						if ($line =~ m/invert/){
 							@currline = split(" ", $line);
@@ -135,6 +136,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 					
 					for($j = 0; $j < scalar(@stutimes); $j++){
 						if($stutimes[$j] > 3 * $exptimes[$j]){
+							$missedcount++;
 							$tcscore[$i] = ((3 * $exptimes[$j]) / $stutimes[$j]) * $PPT;
 						}
 						else{
@@ -147,7 +149,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 					$prefscore += $tcscore[$j];
 				}
 				
-				if($prefscore < $score[$i]){
+				if($missedcount > 0){
 					$score[$i] = $prefscore;
 					print "One or more threads runs longer than the allowed maximum\n";
 
@@ -166,7 +168,7 @@ for($i = 0; $i < $NUM_TC; $i++) {
 		}
 		
 		else{
-			print "Performance test needs to be run on quatro01 or quatro01\n";
+			print "Performance test needs to be run on quatro01 or quatro02\n";
 		}
 			
 			
