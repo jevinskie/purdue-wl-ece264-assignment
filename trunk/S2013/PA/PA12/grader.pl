@@ -125,7 +125,8 @@ for($i = 0; $i < $NUM_TC; $i++) {
 					}
 					close(TIMEINFO);					
 					
-					open(EXPECTED, "</home/shay/a/ece264z6/PA12/expected/exptime$i");
+					open(EXPECTED, "<expected/exptime$i");
+					#open(EXPECTED, "</home/shay/a/ece264z6/PA12/expected/exptime$i");
 					while ($line = <EXPECTED>) {
 						if ($line =~ m/invert/){
 							@currline = split(" ", $line);
@@ -149,8 +150,9 @@ for($i = 0; $i < $NUM_TC; $i++) {
 					$prefscore += $tcscore[$j];
 				}
 				
-				if($missedcount > 0){
+				if($missedcount > 3){
 					$score[$i] = $prefscore;
+					print "missedcount is $missedcount\n";
 					print "One or more threads runs longer than the allowed maximum\n";
 
 				}
