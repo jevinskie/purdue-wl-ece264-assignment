@@ -2,11 +2,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
+#include <time.h>
 #include "bmp.h"
 
 double timeDiff(struct timeval t1, struct timeval t2)
 {
-  return (t2.tv_sec - t1.tv_sec) + 10e-6 * (t2.tv_usec - t1.tv_usec);
+  double time_diff;
+  double sec_offset = 0;
+  double t1_sec = t1.tv_sec;
+  double t2_sec = t2.tv_sec;
+  double t1_usec = t1.tv_usec;
+  double t2_usec = t2.tv_usec;
+  //printf("%f %f %f %f\n", t1_sec, t2_sec, t1_usec, t2_usec);
+  if (t2_usec < t1_usec) {
+    time_diff = 1e6 + t2_usec - t1_usec;
+    sec_offset = -1;
+  } else {
+    time_diff = t2_usec - t1_usec;
+  }
+
+  time_diff = (t2_sec - t1_sec) + sec_offset + time_diff / 1e6;
+  return time_diff; //in second
+  //return (t2.tv_sec - t1.tv_sec) + 10e-6 * (t2.tv_usec - t1.tv_usec);
 }
 
 int main(int argc, char **argv)
@@ -34,7 +51,7 @@ int main(int argc, char **argv)
       }
 
     // Invert the file
-    for (numThread = 1; numThread < maxThread; numThread ++)
+    for (numThread = 1; numThread <= maxThread; numThread ++)
       {
 	struct timeval invertTime1;
 	struct timeval invertTime2;

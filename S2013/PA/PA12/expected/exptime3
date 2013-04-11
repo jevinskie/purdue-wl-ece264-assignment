@@ -6,68 +6,13 @@ width: 220
 height: 220
 planes: 1
 bits: 24
-load time:   0.4144
-blocks = 0 145199
-1 threads, invert time:   0.0101
-blocks = 0 145199
-blocks = 0 72600
-blocks = 72601 145199
-2 threads, invert time:   0.0073
-blocks = 0 72600
-blocks = 72601 145199
-blocks = 0 48400
-blocks = 48401 96801
-blocks = 96802 145199
-3 threads, invert time:   0.0166
-blocks = 0 48400
-blocks = 48401 96801
-blocks = 96802 145199
-blocks = 0 36300
-blocks = 36301 72601
-blocks = 72602 108902
-blocks = 108903 145199
-4 threads, invert time:   0.0064
-blocks = 0 36300
-blocks = 36301 72601
-blocks = 72602 108902
-blocks = 108903 145199
-blocks = 0 29040
-blocks = 29041 58081
-blocks = 58082 87122
-blocks = 87123 116163
-blocks = 116164 145199
-5 threads, invert time:   0.0040
-blocks = 0 29040
-blocks = 29041 58081
-blocks = 58082 87122
-blocks = 87123 116163
-blocks = 116164 145199
-blocks = 0 24200
-blocks = 24201 48401
-blocks = 48402 72602
-blocks = 72603 96803
-blocks = 96804 121004
-blocks = 121005 145199
-6 threads, invert time:   0.0041
-blocks = 0 24200
-blocks = 24201 48401
-blocks = 48402 72602
-blocks = 72603 96803
-blocks = 96804 121004
-blocks = 121005 145199
-blocks = 0 20742
-blocks = 20743 41485
-blocks = 41486 62228
-blocks = 62229 82971
-blocks = 82972 103714
-blocks = 103715 124457
-blocks = 124458 145199
-7 threads, invert time:   0.0095
-blocks = 0 20742
-blocks = 20743 41485
-blocks = 41486 62228
-blocks = 62229 82971
-blocks = 82972 103714
-blocks = 103715 124457
-blocks = 124458 145199
-save time:   0.0746
+load time:   0.0013
+1 threads, invert time:   0.0012
+2 threads, invert time:   0.0006
+3 threads, invert time:   0.0015
+4 threads, invert time:   0.0006
+5 threads, invert time:   0.0004
+6 threads, invert time:   0.0005
+7 threads, invert time:   0.0006
+8 threads, invert time:   0.0007
+save time:   0.0001
