@@ -34,9 +34,14 @@ You only need to take the simplest approach:
 enumerate all the subset of S,  add up the elements and compare to N, 
 count one if there is a match, and finally return the total number of counts.
 
+In this assignment, you need to submit the following files:
+
+README
+subsetSum.c
+
 You should write the function subsetSum() in subsetSum.c file and submit it.
-You may write your additional functions in subsetSum.c file.
-Please do not modify the other files.
+You may write your additional functions or structure inside subsetSum.c file.
+Please do not modify the other files. 
 
 In this assignment, you should be aware of the Thread Synchronization.
 Please refer to the following explanation.
