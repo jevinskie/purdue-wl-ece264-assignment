@@ -7,10 +7,6 @@
 #define SUCCESS 0
 #define FAILURE -1
 
-// pthread syncronization
-pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
-long numOfSolutions = 0;
-
 /*
 * Write a parallel C program that returns the answer for the following problem:
 * Given a nonempty set S, with elements {a1, a2, a3, ...}, and a integer N, 
@@ -34,6 +30,4 @@ long numOfSolutions = 0;
 int subsetSum(int * intset, int length, int N, int numThread)
 { 
   
-
-  return numOfSolutions;
 }
