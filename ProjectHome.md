@@ -1,0 +1,1 @@
+This course teaches C programming. The students learn memory management, structure, dynamic structure, and complexity. This project is used to share skeleton code of programming assignments.
